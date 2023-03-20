@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 module "vpc" {
-  source = "./vpc"
+  source = "./modules/vpc"
 }
 
 module "rds" {
-  source = "./rds"
+  source = "./modules/rds"
   username = var.username
   password = var.password
   vpc_security_group_ids = module.vpc.vpc_security_group_ids
